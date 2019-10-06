@@ -1,0 +1,4 @@
+.idea
+*.bak
+*.iml
+node_modules

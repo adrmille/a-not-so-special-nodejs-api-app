@@ -1,0 +1,26 @@
+{
+  "name": "insurance-policies-app",
+  "version": "1.0.0",
+  "description": "An application that manages some information regarding insurance policies and company clients.",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrmille/a-not-so-special-nodejs-api-app.git"
+  },
+  "author": "Adrian Mille",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adrmille/a-not-so-special-nodejs-api-app/issues"
+  },
+  "homepage": "https://github.com/adrmille/a-not-so-special-nodejs-api-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
