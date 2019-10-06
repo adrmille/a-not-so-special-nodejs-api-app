@@ -1,12 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET users listing. */
-// FIXME this is just an example
 /**
  * @swagger
  *
- * /login:
+ * /auth/login:
  *   post:
  *     description: Login to the application
  *     produces:
@@ -24,9 +22,9 @@ const router = express.Router();
  *         type: string
  *     responses:
  *       200:
- *         description: login
+ *         description: Login
  */
-router.get('/token', function(req, res, next) {
+router.post('/login', function(req, res) {
   res.send('respond with a resource');
 });
 
