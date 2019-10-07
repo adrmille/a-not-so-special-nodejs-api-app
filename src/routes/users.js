@@ -1,6 +1,7 @@
 const express = require('express');
+const passport = require("../middleware/passport");
+
 const router = express.Router();
-const passport = require("../config/passport");
 
 /**
  * @swagger
