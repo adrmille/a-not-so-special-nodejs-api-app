@@ -17,5 +17,5 @@ global.gConfig = finalConfig;
 
 if (environment === 'development') {
   // log global.gConfig
-  console.log(`global.gConfig (development env only! ${JSON.stringify(global.gConfig, undefined, global.gConfig.json_indentation)}`);
+  console.log(`global.gConfig (development env only!) ${JSON.stringify(global.gConfig, undefined, global.gConfig.json_indentation)}`);
 }
