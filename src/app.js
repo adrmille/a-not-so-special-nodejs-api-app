@@ -11,8 +11,8 @@ const passport = require("./middleware/passport");
 require('./database/database')
 
 /** Routers */
-const authRouter = require('./routes/auth');
-const usersRouter = require('./routes/users');
+const authRouter = require('./routes/authRouter');
+const usersRouter = require('./routes/usersRouter');
 
 const app = express();
 
