@@ -1,5 +1,5 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
+const authController = require("../controllers/authController");
 
 const router = express.Router();
 
@@ -28,20 +28,6 @@ const router = express.Router();
  *       401:
  *         description: No such user found
  */
-router.post('/login', (req, res) => {
-  if(req.body.userId && req.body.password){
-    var userId = req.body.userId;
-    // var password = req.body.password;
-  } else {
-    res.status(401).json({message:"no such user found"});
-  }
-  // TODO sanitize request inputs
-  // TODO replace by a database call, to fetch user credentials
-
-  const payload = {id: userId};
-  const token = jwt.sign(payload, global.gConfig.jwt_secret_key);
-  // TODO database call to store the token
-  res.json({message: "ok", token: token});
-});
+router.post('/login', authController.generateJwsToken);
 
 module.exports = router;

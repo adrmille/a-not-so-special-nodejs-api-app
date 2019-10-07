@@ -1,5 +1,8 @@
 const express = require('express');
 const passport = require("../middleware/passport");
+const userController = require("../controllers/userController");
+const authorize = require("../middleware/authorize");
+const Role = require("../models/Role");
 
 const router = express.Router();
 
@@ -21,12 +24,12 @@ const router = express.Router();
  *         type: string
  *     responses:
  *       200:
- *         description: User data
+ *         description: User data as json
  *       401:
  *         description: Unauthorized
  */
-router.get('/:userId', passport.authenticate('jwt', { session: false }), (req, res) => {
-  res.send('respond with a resource: ' + req.params.userId);
-});
+router.get('/:userId', passport.authenticate('jwt', {session: false}),
+    authorize.roles(Role.ADMIN, Role.USER),
+    userController.findUserById);
 
 module.exports = router;
