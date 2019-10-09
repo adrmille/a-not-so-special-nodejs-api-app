@@ -38,8 +38,8 @@ const policySchema = mongoose.Schema({
   }
 });
 
-policySchema.set('toJSON', { versionKey: false });
-policySchema.set('toObject', { versionKey: false });
+policySchema.set('toJSON', {versionKey: false});
+policySchema.set('toObject', {versionKey: false});
 
 policySchema.options.toObject.transform = function (doc, ret, options) {
   // remove the _id of every document before returning the result

@@ -9,15 +9,15 @@ const router = express.Router();
 /**
  * @swagger
  *
- * /users/{userId}:
+ * /users/{id}:
  *   get:
  *     security:
  *       - bearerAuth: []
- *     description: User data filtered by user id
+ *     description: Get user data filtered by user id.
  *     produces:
  *       - application/json
  *     parameters:
- *       - name: userId
+ *       - name: id
  *         description: Id of the user.
  *         in: path
  *         required: true
@@ -28,7 +28,7 @@ const router = express.Router();
  *       401:
  *         description: Unauthorized
  */
-router.get('/:userId', passport.authenticate('jwt', {session: false}),
+router.get('/:id', passport.authenticate('jwt', {session: false}),
     authorize.roles(Role.ADMIN, Role.USER),
     userController.findUserById);
 
@@ -39,7 +39,7 @@ router.get('/:userId', passport.authenticate('jwt', {session: false}),
  *   get:
  *     security:
  *       - bearerAuth: []
- *     description: User data filtered by user name.
+ *     description: Get User data filtered by user name.
  *     produces:
  *       - application/json
  *     parameters:
