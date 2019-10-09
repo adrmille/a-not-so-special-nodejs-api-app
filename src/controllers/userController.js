@@ -1,8 +1,9 @@
 const User = require('../models/User');
+const Role = require('../models/Role');
 
 exports.findUserById = async (req, res) => {
   try {
-    const user = await User.findOne({ id: req.params.userId });
+    const user = await User.findOne({id: req.params.userId});
     if (user) {
       res.send(user);
     } else {
@@ -16,7 +17,13 @@ exports.findUserById = async (req, res) => {
 
 exports.findUserByName = async (req, res) => {
   try {
-    const user = await User.findOne({ name: req.params.name });
+    console.log(req.query.name);
+    let user;
+    if (req.role === Role.ADMIN) {
+      user = await User.findOne({name: req.query.name});
+    } else { // simple user can only request for its name
+      user = await User.findOne({name: req.query.name, id: req.user});
+    }
     if (user) {
       res.send(user);
     } else {

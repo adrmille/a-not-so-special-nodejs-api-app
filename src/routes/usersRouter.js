@@ -35,17 +35,17 @@ router.get('/:userId', passport.authenticate('jwt', {session: false}),
 /**
  * @swagger
  *
- * /users/name/{name}:
+ * /users/search/q:
  *   get:
  *     security:
  *       - bearerAuth: []
- *     description: User data filtered by user id
+ *     description: User data filtered by user name
  *     produces:
  *       - application/json
  *     parameters:
  *       - name: name
  *         description: The name of the user.
- *         in: path
+ *         in: query
  *         required: true
  *         type: string
  *     responses:
@@ -54,7 +54,7 @@ router.get('/:userId', passport.authenticate('jwt', {session: false}),
  *       401:
  *         description: Unauthorized
  */
-router.get('/name/:name', passport.authenticate('jwt', {session: false}),
+router.get('/search/q', passport.authenticate('jwt', {session: false}),
     authorize.roles(Role.ADMIN, Role.USER),
     userController.findUserByName);
 

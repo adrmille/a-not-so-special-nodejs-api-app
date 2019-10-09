@@ -16,6 +16,5 @@ exports.generateJwsToken = async (req, res) => {
   } else {
     res.status(401).json({message: "no such user found"});
   }
-
 };
 
