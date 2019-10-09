@@ -5,7 +5,7 @@ exports.roles = (...roles) => {
     User.findOne({id: req.user})
     .then((user) => {
       if (user  && roles.find(v => v === user.role) !== undefined) {
-        req.roles = user.role;
+        req.role = user.role;
         next();
       } else {
         res.status(401).json({message: "Unauthorized"});

@@ -13,7 +13,7 @@ const router = express.Router();
  *   get:
  *     security:
  *       - bearerAuth: []
- *     description: List of policies linked to a user name.
+ *     description: Get a list of policies linked to a user name.
  *     produces:
  *       - application/json
  *     parameters:
@@ -37,15 +37,15 @@ router.get('/search/q', passport.authenticate('jwt', {session: false}),
 /**
  * @swagger
  *
- * /policies/{policyId}/user:
+ * /policies/{id}/user:
  *   get:
  *     security:
  *       - bearerAuth: []
- *     description: Find a user linked to a policy id.
+ *     description: Get a user linked to a policy id.
  *     produces:
  *       - application/json
  *     parameters:
- *       - name: policyId
+ *       - name: id
  *         description: A policy id.
  *         in: path
  *         required: true
@@ -58,7 +58,7 @@ router.get('/search/q', passport.authenticate('jwt', {session: false}),
  *       404:
  *         description: No policy found.
  */
-router.get('/:policyId/user', passport.authenticate('jwt', {session: false}),
+router.get('/:id/user', passport.authenticate('jwt', {session: false}),
     authorize.roles(Role.ADMIN),
     policyController.findUserIdByPolicyId);
 

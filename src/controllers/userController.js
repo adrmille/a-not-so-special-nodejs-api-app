@@ -3,7 +3,13 @@ const Role = require('../models/Role');
 
 exports.findUserById = async (req, res) => {
   try {
-    const user = await User.findOne({id: req.params.userId});
+    const authorizedToAccessDatas = req.role === Role.ADMIN || req.user
+        === req.params.id;
+    if (!authorizedToAccessDatas) {
+      res.status(401).send(
+          {error: 'Unauthorized - as a simple user you can only search for your details'})
+    }
+    const user = await User.findOne({id: req.params.id});
     if (user) {
       res.send(user);
     } else {
@@ -27,7 +33,8 @@ exports.findUserByName = async (req, res) => {
     if (user) {
       res.send(user);
     } else {
-      res.status(401).send({error: 'user not found'})
+      res.status(401).send(
+          {error: 'User not found, also note that only admin users can search for other users datas'})
     }
   } catch (error) {
     console.error(error);

@@ -7,7 +7,7 @@ exports.findUserByName = async (req, res) => {
     if (!user) {
       res.status(404).send({error: 'no user found'})
     }
-    const policies = await Policy.find({ clientId: user.id });
+    const policies = await Policy.find({clientId: user.id});
     if (policies) {
       res.send(policies);
     } else {
@@ -22,7 +22,7 @@ exports.findUserByName = async (req, res) => {
 exports.findUserIdByPolicyId = async (req, res) => {
   try {
     console.log(req.params.policyId);
-    const policy = await Policy.findOne({ id: req.params.policyId });
+    const policy = await Policy.findOne({id: req.params.id});
     if (!policy) {
       res.status(404).send({error: 'no policy found'})
     }

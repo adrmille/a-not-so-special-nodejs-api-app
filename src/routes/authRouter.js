@@ -8,12 +8,12 @@ const router = express.Router();
  *
  * /auth/login:
  *   post:
- *     description: Login to the application.
+ *     description: Authenticate to get a token.
  *     produces:
  *       - application/json
  *     parameters:
  *       - name: userId
- *         description: Username to use for login.
+ *         description: User id.
  *         in: formData
  *         required: true
  *         type: string

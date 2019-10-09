@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/bin/www"
+    "start-dev": "nodemon src/bin/www",
+    "start": "node src/bin/www"
   },
   "repository": {
     "type": "git",
