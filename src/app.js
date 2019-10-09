@@ -13,6 +13,7 @@ require('./database/database')
 /** Routers */
 const authRouter = require('./routes/authRouter');
 const usersRouter = require('./routes/usersRouter');
+const policiesRouter = require('./routes/policiesRouter');
 
 const app = express();
 
@@ -24,5 +25,6 @@ app.use(passport.initialize());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);
+app.use('/policies', policiesRouter);
 
 module.exports = app;
