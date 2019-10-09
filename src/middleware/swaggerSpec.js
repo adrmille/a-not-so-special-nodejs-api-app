@@ -2,7 +2,6 @@
  * Generate the swagger spec
  * Thanks to http://www.acuriousanimal.com/2018/10/20/express-swagger-doc.html
  */
-
 const swaggerJSDoc = require('swagger-jsdoc');
 
 const options = {

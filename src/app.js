@@ -7,6 +7,9 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./middleware/swaggerSpec');
 const passport = require("./middleware/passport");
 
+/** Database */
+require('./database/database')
+
 /** Routers */
 const authRouter = require('./routes/auth');
 const usersRouter = require('./routes/users');
