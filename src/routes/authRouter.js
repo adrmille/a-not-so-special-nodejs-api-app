@@ -8,7 +8,7 @@ const router = express.Router();
  *
  * /auth/login:
  *   post:
- *     description: Login to the application
+ *     description: Login to the application.
  *     produces:
  *       - application/json
  *     parameters:
@@ -24,9 +24,9 @@ const router = express.Router();
  *         type: string
  *     responses:
  *       200:
- *         description: Login
+ *         description: Login.
  *       401:
- *         description: No such user found
+ *         description: No such user found.
  */
 router.post('/login', authController.generateJwsToken);
 

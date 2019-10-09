@@ -39,7 +39,7 @@ router.get('/:userId', passport.authenticate('jwt', {session: false}),
  *   get:
  *     security:
  *       - bearerAuth: []
- *     description: User data filtered by user name
+ *     description: User data filtered by user name.
  *     produces:
  *       - application/json
  *     parameters:
@@ -50,9 +50,9 @@ router.get('/:userId', passport.authenticate('jwt', {session: false}),
  *         type: string
  *     responses:
  *       200:
- *         description: User data as json
+ *         description: User data as json.
  *       401:
- *         description: Unauthorized
+ *         description: Unauthorized.
  */
 router.get('/search/q', passport.authenticate('jwt', {session: false}),
     authorize.roles(Role.ADMIN, Role.USER),
