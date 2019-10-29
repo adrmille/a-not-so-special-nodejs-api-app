@@ -11,7 +11,7 @@ const router = express.Router();
  *
  * /policies/search/q:
  *   get:
- *     security:
+ *     security:g
  *       - bearerAuth: []
  *     description: Get a list of policies linked to a user name.
  *     produces:

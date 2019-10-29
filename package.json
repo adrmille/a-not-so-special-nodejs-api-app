@@ -10,7 +10,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "nodemon src/bin/www",
-    "start": "node src/bin/www"
+    "start": "node src/bin/www",
+    "e2e-m": "cucumber-js e2e-testing/features/**/*.feature --parallel 3 --require e2e-testing/step-definitions/**/*.js",
+    "e2e": "cucumber-js e2e-testing/features/**/*.feature --require e2e-testing/step-definitions/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -37,5 +39,9 @@
     "swagger-jsdoc": "^3.4.0",
     "swagger-ui-express": "^4.1.2",
     "validator": "^11.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cucumber": "^6.0.3"
   }
 }
