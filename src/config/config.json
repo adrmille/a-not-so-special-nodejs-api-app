@@ -3,7 +3,7 @@
     "config_id": "development",
     "node_port": 3000,
     "jwt_secret_key": "fd54f8ze4f6z4f6ze4f864a615f61ds6e7f68z4fz",
-    "mongodb_url": "mongodb+srv://dev1:<password>@cluster0-c3emg.mongodb.net/insurance-policies-db?retryWrites=true&w=majority",
+    "mongodb_url": "mongodb+srv://dev1:Ubceiubz48a4dYTE@cluster0-c3emg.mongodb.net/insurance-policies-db?retryWrites=true&w=majority",
     "clients_url": "http://www.mocky.io/v2/5808862710000087232b75ac/",
     "policies_url": "http://www.mocky.io/v2/580891a4100000e8242b75c5"
   }

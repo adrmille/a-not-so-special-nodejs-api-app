@@ -16,4 +16,4 @@ exports.roles = (...roles) => {
       res.status(401).json({message: "Unauthorized"});
     })
   };
-}
+};

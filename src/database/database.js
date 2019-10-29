@@ -5,4 +5,4 @@ mongoose.connect(global.gConfig.mongodb_url, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true
-})
+}).then(r => console.info("DB connection successful"));
