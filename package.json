@@ -24,7 +24,7 @@
   "homepage": "https://github.com/adrmille/a-not-so-special-nodejs-api-app#readme",
   "dependencies": {
     "debug": "~2.6.9",
-    "express": "~4.16.1",
+    "express": "~4.18.2",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "mongodb": "^3.3.2",
